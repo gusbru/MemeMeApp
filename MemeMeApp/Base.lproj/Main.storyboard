@@ -19,38 +19,71 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mra-2U-Z7k"/>
-                                    <barButtonItem title="Pick Photo" image="photo" catalog="system" id="JWd-Yj-aQE" userLabel="Pick"/>
+                                    <barButtonItem title="Pick Photo" image="photo" catalog="system" id="JWd-Yj-aQE" userLabel="Pick">
+                                        <connections>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="9UT-L1-5Az"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EDh-NP-7N5"/>
-                                    <barButtonItem title="Camera" image="camera" catalog="system" id="mJL-8M-RY2" userLabel="Pick"/>
+                                    <barButtonItem title="Camera" image="camera" catalog="system" id="mJL-8M-RY2" userLabel="Pick">
+                                        <connections>
+                                            <action selector="takePicture:" destination="BYZ-38-t0r" id="Lo7-oo-ugA"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="z3X-YR-yaY"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PM-UF-7Ah">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="vkV-5I-nBJ"/>
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="vkV-5I-nBJ">
+                                        <connections>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="6Pg-3P-Av9"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-zT-5OV">
                                 <rect key="frame" x="20" y="88" width="374" height="725"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-ft-hcs">
+                                <rect key="frame" x="0.0" y="118" width="414" height="41"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-4i-UY3">
+                                <rect key="frame" x="0.0" y="732" width="414" height="41"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7dv-zT-5OV" secondAttribute="trailing" constant="20" id="2ik-Z7-9dg"/>
                             <constraint firstItem="4kc-tF-kSx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6AR-JB-i6T"/>
+                            <constraint firstItem="LP1-ft-hcs" firstAttribute="top" secondItem="1PM-UF-7Ah" secondAttribute="bottom" constant="30" id="E2C-Pd-nP8"/>
                             <constraint firstItem="4kc-tF-kSx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jxm-f9-NxU"/>
                             <constraint firstItem="7dv-zT-5OV" firstAttribute="top" secondItem="1PM-UF-7Ah" secondAttribute="bottom" id="MFi-2u-wWl"/>
                             <constraint firstItem="7dv-zT-5OV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="2.5" id="Mno-zG-J4d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LP1-ft-hcs" secondAttribute="trailing" id="X8l-eq-t4X"/>
+                            <constraint firstItem="4kc-tF-kSx" firstAttribute="top" secondItem="KwJ-4i-UY3" secondAttribute="bottom" constant="40" id="Y1i-lK-y44"/>
                             <constraint firstItem="1PM-UF-7Ah" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YSq-sr-1z5"/>
+                            <constraint firstItem="KwJ-4i-UY3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bPE-4o-iw2"/>
                             <constraint firstItem="1PM-UF-7Ah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXq-oC-1qP"/>
                             <constraint firstItem="7dv-zT-5OV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lw4-vm-eov"/>
                             <constraint firstItem="4kc-tF-kSx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mSD-up-pfK"/>
+                            <constraint firstItem="LP1-ft-hcs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qC1-e6-P29"/>
                             <constraint firstItem="7dv-zT-5OV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qij-C1-irh"/>
+                            <constraint firstItem="KwJ-4i-UY3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rwf-y1-uZU"/>
                             <constraint firstItem="4kc-tF-kSx" firstAttribute="top" secondItem="7dv-zT-5OV" secondAttribute="bottom" id="xm9-J3-XR1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="7dv-zT-5OV" id="agE-bR-78W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
