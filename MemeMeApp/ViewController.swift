@@ -18,6 +18,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var centerLabel: UILabel!
+    @IBOutlet weak var leftArrow: UIImageView!
+    @IBOutlet weak var rightArrow: UIImageView!
     
     
     // instantiate the delegated class to deal with labels
@@ -53,6 +56,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // check to enable/disable share button
         checkImage()
+        
+        // update label
+        centerLabel.text = "Pick or take a\npicture"
+        
         
     }
     
@@ -194,8 +201,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func checkImage() {
         if image.image != nil {
             shareButton.isEnabled = true
+            centerLabel.isHidden = true
+            leftArrow.isHidden = true
+            rightArrow.isHidden = true
         } else {
             shareButton.isEnabled = false
+            centerLabel.isHidden = false
+            leftArrow.isHidden = false
+            rightArrow.isHidden = false
         }
     }
     
