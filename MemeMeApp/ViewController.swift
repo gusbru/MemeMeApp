@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var topLabel: UITextField!
     @IBOutlet weak var bottomLabel: UITextField!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     let titleDelegate = TitleTextFieldDelegate()
     
@@ -25,15 +26,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topLabel.delegate = titleDelegate
         bottomLabel.delegate = titleDelegate
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // check if camera is available
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
 
     @IBAction func pickImage(_ sender: Any) {
         let pickController = UIImagePickerController()
         pickController.delegate = self
+        pickController.sourceType = .photoLibrary
         present(pickController, animated: true, completion: nil)
     }
     
     @IBAction func takePicture(_ sender: Any) {
-        print("takePicture")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+        
     }
     
     @IBAction func share(_ sender: Any) {
@@ -43,6 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(activityController, animated: true, completion: nil)
     }
     
+    // MARK: UIImagePickControllerDelegate Methos
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let pickImage = info[.originalImage] as? UIImage {

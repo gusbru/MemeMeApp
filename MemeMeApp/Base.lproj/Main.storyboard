@@ -98,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomLabel" destination="Ecj-nn-auR" id="du6-tc-MzI"/>
+                        <outlet property="cameraButton" destination="mJL-8M-RY2" id="hx0-Mh-abR"/>
                         <outlet property="image" destination="7dv-zT-5OV" id="agE-bR-78W"/>
                         <outlet property="topLabel" destination="tKp-Hi-aYf" id="cNz-UQ-mFo"/>
                     </connections>
