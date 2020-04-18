@@ -12,7 +12,11 @@ import UIKit
 class TitleTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text?.removeAll()
+        if let text = textField.text {
+            if text == "TOP" || text == "BOTTOM" {
+                textField.text?.removeAll()
+            }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

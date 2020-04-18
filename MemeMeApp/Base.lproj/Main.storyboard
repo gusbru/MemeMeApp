@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4kc-tF-kSx">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4kc-tF-kSx" userLabel="BottomToolbar">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mra-2U-Z7k"/>
@@ -33,7 +33,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="z3X-YR-yaY"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PM-UF-7Ah">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PM-UF-7Ah" userLabel="TopToolbar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="vkV-5I-nBJ">
@@ -84,9 +84,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomLabel" destination="Ecj-nn-auR" id="du6-tc-MzI"/>
+                        <outlet property="bottomToolbar" destination="4kc-tF-kSx" id="o5c-bh-TcG"/>
                         <outlet property="cameraButton" destination="mJL-8M-RY2" id="hx0-Mh-abR"/>
                         <outlet property="image" destination="7dv-zT-5OV" id="agE-bR-78W"/>
+                        <outlet property="shareButton" destination="vkV-5I-nBJ" id="Yo3-5l-j72"/>
                         <outlet property="topLabel" destination="tKp-Hi-aYf" id="cNz-UQ-mFo"/>
+                        <outlet property="topToolbar" destination="1PM-UF-7Ah" id="WXs-WK-1sc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
