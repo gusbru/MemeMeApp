@@ -13,6 +13,7 @@
 		75053715244A6D11002180EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75053713244A6D11002180EC /* Main.storyboard */; };
 		75053717244A6D15002180EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75053716244A6D15002180EC /* Assets.xcassets */; };
 		7505371A244A6D15002180EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75053718244A6D15002180EC /* LaunchScreen.storyboard */; };
+		75053723244A7CC7002180EC /* TitleTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75053722244A7CC7002180EC /* TitleTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		75053716244A6D15002180EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75053719244A6D15002180EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7505371B244A6D15002180EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75053722244A7CC7002180EC /* TitleTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		7505370C244A6D11002180EC /* MemeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				75053721244A7C49002180EC /* TextFieldDelegate */,
 				7505370D244A6D11002180EC /* AppDelegate.swift */,
 				7505370F244A6D11002180EC /* SceneDelegate.swift */,
 				75053711244A6D11002180EC /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				7505371B244A6D15002180EC /* Info.plist */,
 			);
 			path = MemeMeApp;
+			sourceTree = "<group>";
+		};
+		75053721244A7C49002180EC /* TextFieldDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				75053722244A7CC7002180EC /* TitleTextFieldDelegate.swift */,
+			);
+			path = TextFieldDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75053712244A6D11002180EC /* ViewController.swift in Sources */,
+				75053723244A7CC7002180EC /* TitleTextFieldDelegate.swift in Sources */,
 				7505370E244A6D11002180EC /* AppDelegate.swift in Sources */,
 				75053710244A6D11002180EC /* SceneDelegate.swift in Sources */,
 			);
