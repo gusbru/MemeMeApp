@@ -15,7 +15,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomLabel: UITextField!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    // instantiate the delegated class to deal with labels
     let titleDelegate = TitleTextFieldDelegate()
+    
+    // default format to labels
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.white,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.strokeWidth: 5
+    ]
     
     
     override func viewDidLoad() {
@@ -25,6 +34,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Delegate
         topLabel.delegate = titleDelegate
         bottomLabel.delegate = titleDelegate
+        
+        // setup the labels
+        topLabel.defaultTextAttributes = memeTextAttributes
+        topLabel.textAlignment = .center
+        
+        bottomLabel.defaultTextAttributes = memeTextAttributes
+        bottomLabel.textAlignment = .center
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

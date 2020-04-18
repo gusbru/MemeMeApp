@@ -47,31 +47,17 @@
                                 <rect key="frame" x="20" y="88" width="374" height="725"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-Hi-aYf">
-                                <rect key="frame" x="20" y="146" width="374" height="47.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Top">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="0.99893576553595265" blue="0.99185997757183442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="40" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-Hi-aYf">
+                                <rect key="frame" x="20" y="146" width="374" height="48"/>
+                                <color key="textColor" red="1" green="0.99893576553595265" blue="0.99185997757183442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Bottom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-nn-auR">
-                                <rect key="frame" x="20" y="729" width="374" height="47.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Bottom">
-                                        <attributes>
-                                            <color key="NSColor" red="0.98539195218658293" green="1" blue="0.95310434980576253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="40" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-nn-auR">
+                                <rect key="frame" x="20" y="728.5" width="374" height="48"/>
+                                <color key="textColor" red="0.98539195218658293" green="1" blue="0.95310434980576253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
