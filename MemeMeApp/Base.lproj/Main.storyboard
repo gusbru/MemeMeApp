@@ -58,7 +58,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-nn-auR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Bottom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-nn-auR">
                                 <rect key="frame" x="20" y="729" width="374" height="47.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Bottom">
