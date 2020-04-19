@@ -27,6 +27,11 @@ class TableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(generateMeme))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
