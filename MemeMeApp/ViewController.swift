@@ -107,6 +107,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         tableViewController.tableView.reloadData()
                     }
                     
+                    // update collection
+                    if let collectionViewController = self.collectionViewController {
+                        collectionViewController.collectionView.reloadData()
+                    }
+                    
                     self.closeView()
                     return
                 } else {

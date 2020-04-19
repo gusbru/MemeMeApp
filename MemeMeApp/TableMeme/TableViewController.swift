@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.navigationItem.title = "Memes"
+        self.navigationItem.title = "Memes List"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(generateMeme))
     }
@@ -107,11 +107,8 @@ class TableViewController: UITableViewController {
         let viewController = storyboard?.instantiateViewController(identifier: "MakeMeme") as! ViewController
         
         viewController.tableViewController = self
-        present(viewController, animated: true, completion: updateTable)
+        present(viewController, animated: true, completion: nil)
     }
     
-    @objc func updateTable() {
-        print("update table ===> \(appDelegate.memesList.count)")
-    }
 
 }
