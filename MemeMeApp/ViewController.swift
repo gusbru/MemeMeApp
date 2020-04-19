@@ -29,30 +29,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: properties
     var memedImage: UIImage?
     
-    // default format to labels
-    let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.white,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: 5
-    ]
-    
     // MARK: lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Delegate
-        topLabel.delegate = titleDelegate
-        bottomLabel.delegate = titleDelegate
-        
         // setup the labels
-        topLabel.defaultTextAttributes = memeTextAttributes
-        topLabel.textAlignment = .center
-        
-        bottomLabel.defaultTextAttributes = memeTextAttributes
-        bottomLabel.textAlignment = .center
+        configureTextField(topLabel, text: "TOP")
+        configureTextField(bottomLabel, text: "BOTTOM")
         
         // check to enable/disable share button
         checkImage()
@@ -82,20 +67,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func pickImage(_ sender: Any) {
         
-        let pickController = UIImagePickerController()
-        pickController.delegate = self
-        pickController.sourceType = .photoLibrary
-        present(pickController, animated: true, completion: nil)
+        getImage(source: .photoLibrary)
         
     }
     
     @IBAction func takePicture(_ sender: Any) {
         
+        getImage(source: .camera)
+        
+    }
+    
+    func getImage(source: UIImagePickerController.SourceType) {
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     @IBAction func share(_ sender: Any) {
@@ -210,6 +197,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             leftArrow.isHidden = false
             rightArrow.isHidden = false
         }
+    }
+    
+    // MARK: Format meme
+    func configureTextField(_ textfield: UITextField, text: String) {
+        // Delegate
+        textfield.delegate = titleDelegate
+        
+        // default format to labels
+        let memeTextAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.strokeColor: UIColor.white,
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedString.Key.strokeWidth: 5
+        ]
+        
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.textAlignment = .center
+        
+        textfield.text = text.uppercased()
     }
     
 }
