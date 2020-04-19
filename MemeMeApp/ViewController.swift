@@ -45,7 +45,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // update label
         centerLabel.text = "Pick or take a\npicture"
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -216,6 +215,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textfield.textAlignment = .center
         
         textfield.text = text.uppercased()
+    }
+    
+    // MARK: close view
+    @IBAction func closeView() {
+        dismiss(animated: true, completion: nil)
     }
     
 }
