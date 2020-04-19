@@ -28,6 +28,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: properties
     var memedImage: UIImage?
+    var tableViewController: UITableViewController?
+    var collectionViewController: UICollectionViewController?
     
     // MARK: lifecycle methods
     
@@ -89,6 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         generateMemedImage()
         
         if let image = memedImage {
+            
             let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             present(activityController, animated: true, completion: nil)
             
@@ -98,9 +101,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 if completed {
                     print("share completed")
                     self.save()
+                    
+                    // update table
+                    if let tableViewController = self.tableViewController {
+                        tableViewController.tableView.reloadData()
+                    }
+                    
+                    self.closeView()
                     return
                 } else {
                     print("cancel")
+                    self.closeView()
                 }
                 if let shareError = error {
                     print("error while sharing: \(shareError.localizedDescription)")
@@ -182,6 +193,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         print("save meme")
         let meme = Meme(topText: topLabel.text!, bottomText: bottomLabel.text!, originalImage: image.image!, memedImage: memedImage!)
+        
+        // Add it to the memes array in the Application Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memesList.append(meme)
+        
     }
     
     func checkImage() {

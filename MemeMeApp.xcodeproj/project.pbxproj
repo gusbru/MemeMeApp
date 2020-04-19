@@ -16,6 +16,7 @@
 		75053723244A7CC7002180EC /* TitleTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75053722244A7CC7002180EC /* TitleTextFieldDelegate.swift */; };
 		75053726244B5B34002180EC /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75053725244B5B34002180EC /* Meme.swift */; };
 		750537AC244CC53C002180EC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750537AB244CC53C002180EC /* TableViewController.swift */; };
+		750537AE244CC91A002180EC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750537AD244CC91A002180EC /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		75053722244A7CC7002180EC /* TitleTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldDelegate.swift; sourceTree = "<group>"; };
 		75053725244B5B34002180EC /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		750537AB244CC53C002180EC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		750537AD244CC91A002180EC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				750537AB244CC53C002180EC /* TableViewController.swift */,
+				750537AD244CC91A002180EC /* TableViewCell.swift */,
 			);
 			path = TableMeme;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				75053723244A7CC7002180EC /* TitleTextFieldDelegate.swift in Sources */,
 				7505370E244A6D11002180EC /* AppDelegate.swift in Sources */,
 				75053710244A6D11002180EC /* SceneDelegate.swift in Sources */,
+				750537AE244CC91A002180EC /* TableViewCell.swift in Sources */,
 				75053726244B5B34002180EC /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

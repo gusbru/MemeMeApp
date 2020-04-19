@@ -9,6 +9,10 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    private let reusableIdentifier = "Cell"
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +22,9 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        print("hi from TableMeme")
         
         self.navigationItem.title = "Memes"
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(generateMeme))
     }
 
@@ -33,18 +37,26 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return appDelegate.memesList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath)
 
         // Configure the cell...
+        if let cell = cell as? TableViewCell {
+            let topText = appDelegate.memesList[indexPath.row].topText
+            let bottomText = appDelegate.memesList[indexPath.row].bottomText
+            cell.memeText?.text = "\(topText)...\(bottomText)"
+            cell.memeImage?.image = appDelegate.memesList[indexPath.row].memedImage
+        }
 
         return cell
     }
-    */
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -94,7 +106,12 @@ class TableViewController: UITableViewController {
     @objc func generateMeme() {
         let viewController = storyboard?.instantiateViewController(identifier: "MakeMeme") as! ViewController
         
-        present(viewController, animated: true, completion: nil)
+        viewController.tableViewController = self
+        present(viewController, animated: true, completion: updateTable)
+    }
+    
+    @objc func updateTable() {
+        print("update table ===> \(appDelegate.memesList.count)")
     }
 
 }
