@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             activityController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
             Bool, arrayReturnedItems: [Any]?, error: Error?) in
                 if completed {
-                    print("share completed")
+//                    print("share completed")
                     self.save()
                     
                     // update table
@@ -115,7 +115,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     self.closeView()
                     return
                 } else {
-                    print("cancel")
+//                    print("cancel")
                     self.closeView()
                 }
                 if let shareError = error {
