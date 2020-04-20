@@ -206,17 +206,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func checkImage() {
-        if image.image != nil {
-            shareButton.isEnabled = true
-            centerLabel.isHidden = true
-            leftArrow.isHidden = true
-            rightArrow.isHidden = true
-        } else {
-            shareButton.isEnabled = false
-            centerLabel.isHidden = false
-            leftArrow.isHidden = false
-            rightArrow.isHidden = false
-        }
+        let flag = image.image != nil
+        shareButton.isEnabled = flag
+        centerLabel.isHidden = flag
+        leftArrow.isHidden = flag
+        rightArrow.isHidden = flag
+        
     }
     
     // MARK: Format meme
@@ -229,7 +224,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             NSAttributedString.Key.strokeColor: UIColor.white,
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: 5
+            NSAttributedString.Key.strokeWidth: -4
         ]
         
         textfield.defaultTextAttributes = memeTextAttributes

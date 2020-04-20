@@ -174,6 +174,48 @@
             </objects>
             <point key="canvasLocation" x="-997" y="915"/>
         </scene>
+        <!--Meme Info View Controller-->
+        <scene sceneID="ezJ-sN-ZoT">
+            <objects>
+                <viewController storyboardIdentifier="MemeInfo" id="ofp-Ry-rXA" customClass="MemeInfoViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V3M-BE-tiE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-kw-xPd">
+                                <rect key="frame" x="0.0" y="109" width="414" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgr-lY-b6A">
+                                <rect key="frame" x="20" y="164" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="QPm-po-mj5"/>
+                                    <constraint firstAttribute="width" constant="374" id="aMD-8f-6zG"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rfg-kw-xPd" firstAttribute="leading" secondItem="Jtm-91-Mh7" secondAttribute="leading" id="3Tb-U7-obR"/>
+                            <constraint firstItem="Sgr-lY-b6A" firstAttribute="top" secondItem="rfg-kw-xPd" secondAttribute="bottom" constant="22" id="4fE-L9-ybW"/>
+                            <constraint firstItem="Jtm-91-Mh7" firstAttribute="trailing" secondItem="rfg-kw-xPd" secondAttribute="trailing" id="Eds-WX-9kE"/>
+                            <constraint firstItem="Sgr-lY-b6A" firstAttribute="centerX" secondItem="V3M-BE-tiE" secondAttribute="centerX" id="I8d-xH-oCJ"/>
+                            <constraint firstItem="Sgr-lY-b6A" firstAttribute="top" secondItem="Jtm-91-Mh7" secondAttribute="top" constant="120" id="MgG-Nk-uTz"/>
+                            <constraint firstItem="rfg-kw-xPd" firstAttribute="top" secondItem="Jtm-91-Mh7" secondAttribute="top" constant="65" id="TbY-3j-sPc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jtm-91-Mh7"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeImage" destination="Sgr-lY-b6A" id="ChP-Rb-LHp"/>
+                        <outlet property="memeTitle" destination="rfg-kw-xPd" id="QYb-Hd-Vzt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYg-aD-XWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52.173913043478265" y="569.86607142857144"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -300,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="569"/>
+            <point key="canvasLocation" x="820" y="560"/>
         </scene>
     </scenes>
     <resources>

@@ -19,6 +19,7 @@
 		750537AE244CC91A002180EC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750537AD244CC91A002180EC /* TableViewCell.swift */; };
 		750537B3244D09CF002180EC /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750537B2244D09CF002180EC /* CollectionViewController.swift */; };
 		750537B5244D09F3002180EC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750537B4244D09F3002180EC /* CollectionViewCell.swift */; };
+		7597A0BC244DEB9B00F8DE61 /* MemeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597A0BB244DEB9B00F8DE61 /* MemeInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		750537AD244CC91A002180EC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		750537B2244D09CF002180EC /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		750537B4244D09F3002180EC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		7597A0BB244DEB9B00F8DE61 /* MemeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				75053716244A6D15002180EC /* Assets.xcassets */,
 				75053718244A6D15002180EC /* LaunchScreen.storyboard */,
 				7505371B244A6D15002180EC /* Info.plist */,
+				7597A0BB244DEB9B00F8DE61 /* MemeInfoViewController.swift */,
 			);
 			path = MemeMeApp;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				750537B3244D09CF002180EC /* CollectionViewController.swift in Sources */,
 				75053710244A6D11002180EC /* SceneDelegate.swift in Sources */,
 				750537AE244CC91A002180EC /* TableViewCell.swift in Sources */,
+				7597A0BC244DEB9B00F8DE61 /* MemeInfoViewController.swift in Sources */,
 				75053726244B5B34002180EC /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

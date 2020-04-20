@@ -97,6 +97,13 @@ class TableViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let infoMemeViewControl = self.storyboard?.instantiateViewController(identifier: "MemeInfo") as! MemeInfoViewController
+        infoMemeViewControl.meme = appDelegate.memesList[indexPath.row]
+        navigationController?.pushViewController(infoMemeViewControl, animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -105,8 +112,10 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        self.hidesBottomBarWhenPushed = true
     }
     */
+    
     
     @objc func generateMeme() {
         let viewController = storyboard?.instantiateViewController(identifier: "MakeMeme") as! ViewController

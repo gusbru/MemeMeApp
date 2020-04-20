@@ -27,8 +27,8 @@ class CollectionViewController: UICollectionViewController {
         self.navigationItem.title = "Memes Collection"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(generateMeme))
         
-        let space: CGFloat = 3.0
-        let dimension = (self.view.frame.size.width - 2 * (space)) / 3.0
+//        let space: CGFloat = 3.0
+//        let dimension = (self.view.frame.size.width - 2 * (space)) / 3.0
         
 //        flowLayout.minimumInteritemSpacing = space
 //        flowLayout.minimumLineSpacing = space
@@ -38,6 +38,14 @@ class CollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.collectionView.reloadData()
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let memeInfoViewController = self.storyboard?.instantiateViewController(identifier: "MemeInfo") as! MemeInfoViewController
+        memeInfoViewController.meme = appDelegate.memesList[indexPath.row]
+        navigationController?.pushViewController(memeInfoViewController, animated: true)
+        
     }
 
     /*
