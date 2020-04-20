@@ -11,7 +11,6 @@ import UIKit
 class MemeInfoViewController: UIViewController {
     
     var meme: Meme?
-    @IBOutlet weak var memeTitle: UILabel!
     @IBOutlet weak var memeImage: UIImageView!
     
 
@@ -24,7 +23,6 @@ class MemeInfoViewController: UIViewController {
         // populate meme info
         if let meme = meme {
             memeImage.image = meme.memedImage
-            memeTitle.text = "\(meme.topText)...\(meme.bottomText)"
         }
         
         
