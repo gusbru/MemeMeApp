@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Outlet
     @IBOutlet weak var image: UIImageView!
@@ -35,7 +35,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // setup the labels
         configureTextField(topLabel, text: "TOP")
@@ -50,6 +49,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // check if camera is available
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -59,6 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
         // unsubscribe from keyboard notifications
         unsubstribeFromKeyboardNotifications()
@@ -99,7 +100,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             activityController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
             Bool, arrayReturnedItems: [Any]?, error: Error?) in
                 if completed {
-//                    print("share completed")
                     self.save()
                     
                     // update table
@@ -115,7 +115,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     self.closeView()
                     return
                 } else {
-//                    print("cancel")
                     self.closeView()
                 }
                 if let shareError = error {
@@ -179,9 +178,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Generate Meme
     func generateMemedImage() {
         
-        // hidden toolbar
-        topToolbar.isHidden = true
-        bottomToolbar.isHidden = true
+        hideTollbar()
         
         // generate memed image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -189,10 +186,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // display toolbar
+        showToolbar()
+        
+    }
+    
+    func hideTollbar() {
+        
+        topToolbar.isHidden = true
+        bottomToolbar.isHidden = true
+    }
+    
+    func showToolbar() {
+        
         topToolbar.isHidden = false
         bottomToolbar.isHidden = false
-        
     }
     
     func save() {
@@ -221,10 +228,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // default format to labels
         let memeTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.strokeColor: UIColor.white,
-            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.strokeColor: UIColor.black,
+            NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: -4
+            NSAttributedString.Key.strokeWidth: -4.0
         ]
         
         textfield.defaultTextAttributes = memeTextAttributes
